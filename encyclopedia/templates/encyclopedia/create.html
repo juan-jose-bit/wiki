@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+{% block body %}
+    <h1 class="display-3">Create a new entry</h1>
+    {% if message %}
+    <div class = "alert alert-warning col-lg-4" role="alert">
+        The entry is already in the database.
+        You can create a different one or edit the existing entry.
+    </div>
+    {% endif %}
+    <form action = "{% url 'encyclopedia:create' %}" method="POST">
+        <div class = "form-container">
+            {% csrf_token %}
+            {{form.title}}
+            {{form.text}}
+            <button type = "submit" class = "btn btn-primary">save</button>
+        </div>
+        
+    </form>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "encyclopedia/layout.html" %}
+{% block title %}results{% endblock %}
+{% block body %}
+    <h1 class = "display-5">The results for your search are:</h1>
+    <ul>
+    {% for res in results %}
+        <li><a href="{% url 'encyclopedia:title' res%}">{{res}}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
