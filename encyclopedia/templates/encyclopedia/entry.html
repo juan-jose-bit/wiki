@@ -2,6 +2,6 @@
 
 {% block title %}{{title}}{% endblock %}
 {% block body %}
-<a href = "{% url 'encyclopedia:edit' title %}">edit</a>
 {{entry | safe}}
+<a style = "margin-top:15px; display:inline-block" href = "{% url 'encyclopedia:edit' title %}">edit</a>
 {% endblock %}
